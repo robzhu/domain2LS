@@ -1,6 +1,6 @@
 # Step 1: Create a DNS zone in Lightsail
 
-- If you don't have an AWS account yet, create one here: https://aws.amazon.com/. Once created, log in to your AWS account and navigate to https://lightsail.aws.amazon.com/. 
+- If you don't have an AWS account yet, create one [here](https://aws.amazon.com/). Once created, log in to your AWS account and navigate to the [Lightsail Console](https://lightsail.aws.amazon.com/). 
 
 - Click "Create DNS zone" under the "Networking" tab
 ![New DNS Zone in Lightsail](/images/create_dns_zone.png)
@@ -33,7 +33,7 @@ Copy these down, we'll need them in the next step.
 
 # Step 3: Add DNS Records in Lightsail
 
-- Open the lightsail console (https://lightsail.aws.amazon.com/), click the "Networking" tab and click on your DNS Zone. You can now manage DNS records directly from Lightsail. 
+- Open the [Lightsail Console](https://lightsail.aws.amazon.com/), click the "Networking" tab and click on your DNS Zone. You can now manage DNS records directly from Lightsail. 
 ![Lightsail DNS](/images/ls_add_records.png)
 
 This is a handy way to manage your virtual machines, static IP addresses, and DNS records all in one place. 
