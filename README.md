@@ -1,37 +1,39 @@
-## Welcome to GitHub Pages
+# Step 1: Create a DNS zone in Lightsail
 
-You can use the [editor on GitHub](https://github.com/robzhu/domain2LS/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+- If you don't have an AWS account yet, create one here: https://aws.amazon.com/. Once created, log in to your AWS account and navigate to https://lightsail.aws.amazon.com/. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+- Click "Create DNS zone" under the "Networking" tab
+![New DNS Zone in Lightsail](/images/create_dns_zone.png)
 
-### Markdown
+- Enter your domain name including the TLD and click "Create DNS Zone" 
+![Create DNS Zone](/images/create_dns_zone_2.png)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+- Once created, your DNS Zone will display a list of Name servers
+![Name servers](/images/nameservers.png)
 
-```markdown
-Syntax highlighted code block
+Copy these down, we'll need them in the next step.
 
-# Header 1
-## Header 2
-### Header 3
+# Step 2: Edit the name servers list in Domain.com
 
-- Bulleted
-- List
+- Log in to domain.com and click on "Manage" for your domain
+![Manage your domain](/images/domain_com_manage.png)
 
-1. Numbered
-2. List
+- On the left panel, click "DNS & Nameservers"
 
-**Bold** and _Italic_ and `Code` text
+![DNS & Nameservers](/images/domain_com_nameservers.png)
 
-[Link](url) and ![Image](src)
-```
+- Click "Add Nameserver" and add the four name server URLs from Step 1
+![Add Nameservers](/images/domain_com_add_ns.png)
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+- Delete the old nameservers
+![Delete old nameservers](/images/domain_com_remove_ns.png)
 
-### Jekyll Themes
+- Your final result should look like this (your name server URLs will be different)
+![Final Reference](/images/domain_com_final.png)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/robzhu/domain2LS/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+# Step 3: Add DNS Records in Lightsail
 
-### Support or Contact
+- Open the lightsail console (https://lightsail.aws.amazon.com/), click the "Networking" tab and click on your DNS Zone. You can now manage DNS records directly from Lightsail. 
+![Lightsail DNS](/images/ls_add_records.png)
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+This is a handy way to manage your virtual machines, static IP addresses, and DNS records all in one place. 
